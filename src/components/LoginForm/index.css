@@ -1,0 +1,73 @@
+.logo {
+  height: 40px;
+  width: 200px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-card {
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+.login-btn {
+  font-family: 'Roboto';
+  color: #ffffff;
+  padding: 10px;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.show-pwd-label {
+  color: #0f0f0f;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.checkbox-input {
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.error-msg {
+  font-family: 'Roboto';
+  font-size: 10px;
+  color: #ff0b37;
+  margin-top: 0px;
+}
+
+.label {
+  font-family: 'Roboto';
+  color: #475569;
+  font-size: 12px;
+}
+
+.input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.login-bg {
+  width: 100%;
+}
