@@ -1,8 +1,12 @@
 import {Component} from 'react'
-import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
+import Cookie from 'js-cookie'
+import ViewOfHomePage from '../ViewOfHomePage'
 
-import './index.css'
 import {LoginForm, CheckboxBtn} from '../../styledComponent'
+
+import Header from '../Header'
+import './index.css'
 
 class Login extends Component {
   state = {
@@ -22,7 +26,8 @@ class Login extends Component {
 
   onSubmitSuccess = token => {
     const {history} = this.props
-    Cookies.set('jwt_token', token, {expires: 10, path: '/'})
+    Cookie.set('jwt_token', token, {expires: 10, path: '/'})
+    history.replace('/')
   }
 
   onSubmitFailure = showErrorMsg => {
@@ -39,7 +44,7 @@ class Login extends Component {
       body: JSON.stringify(data),
     }
     const response = await fetch(url, options)
-    console.log(response)
+
     const getData = await response.json()
 
     if (response.ok) {
@@ -58,67 +63,73 @@ class Login extends Component {
   render() {
     const {showPassword, username, password, showErrorMsg} = this.state
     const changePasswordType = showPassword ? 'text' : 'password'
-
     const errorMsgTxt = showErrorMsg ? `*${showErrorMsg}` : null
 
+    const jwtToken = Cookie.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
+
     return (
-      <div className="login-bg">
-        <div className="login-card">
-          <LoginForm onSubmit={this.submitForm}>
-            <div className="logo-container">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-                alt="light logo"
-                className="logo"
-              />
-            </div>
-            <div>
-              <label className="label" htmlFor="username">
-                USERNAME
-              </label>
-              <br />
-              <input
-                className="input"
-                placeholder="Username"
-                id="username"
-                type="text"
-                value={username}
-                onChange={this.enterUsername}
-              />
-            </div>
-            <div>
-              <label className="label" htmlFor="password">
-                PASSWORD
-              </label>
-              <br />
-              <input
-                className="input"
-                placeholder="Password"
-                id="password"
-                type={changePasswordType}
-                onChange={this.enterPassword}
-                value={password}
-              />
-            </div>
-            <div className="checkbox-container">
-              <CheckboxBtn onClick={this.showPassword}>
-                <input
-                  className="checkbox-input"
-                  id="show-password"
-                  type="checkbox"
+      <>
+        <div className="login-bg">
+          <div className="login-card">
+            <LoginForm onSubmit={this.submitForm}>
+              <div className="logo-container">
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                  alt="light logo"
+                  className="logo"
                 />
-              </CheckboxBtn>
-              <label className="show-pwd-label" htmlFor="show-password">
-                Show Password
-              </label>
-            </div>
-            <button className="login-btn" type="submit">
-              Login
-            </button>
-            <p className="error-msg">{errorMsgTxt}</p>
-          </LoginForm>
+              </div>
+              <div>
+                <label className="label" htmlFor="username">
+                  USERNAME
+                </label>
+                <br />
+                <input
+                  className="input"
+                  placeholder="Username"
+                  id="username"
+                  type="text"
+                  value={username}
+                  onChange={this.enterUsername}
+                />
+              </div>
+              <div>
+                <label className="label" htmlFor="password">
+                  PASSWORD
+                </label>
+                <br />
+                <input
+                  className="input"
+                  placeholder="Password"
+                  id="password"
+                  type={changePasswordType}
+                  onChange={this.enterPassword}
+                  value={password}
+                />
+              </div>
+              <div className="checkbox-container">
+                <CheckboxBtn onClick={this.showPassword}>
+                  <input
+                    className="checkbox-input"
+                    id="show-password"
+                    type="checkbox"
+                  />
+                </CheckboxBtn>
+                <label className="show-pwd-label" htmlFor="show-password">
+                  Show Password
+                </label>
+              </div>
+              <button className="login-btn" type="submit">
+                Login
+              </button>
+              <p className="error-msg">{errorMsgTxt}</p>
+            </LoginForm>
+          </div>
         </div>
-      </div>
+      </>
     )
   }
 }

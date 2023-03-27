@@ -1,0 +1,46 @@
+.contact-para {
+  font-family: 'Roboto';
+  color: #181818;
+  font-size: 12px;
+}
+
+.left-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 15px;
+}
+
+.home-txt {
+  font-family: 'Roboto';
+  color: #181818;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.home-type-videos {
+  display: flex;
+  align-items: center;
+  margin-left: 0px;
+}
+
+.contact-logo-container {
+  display: flex;
+}
+
+.facebook-logo {
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.contact-txt {
+  font-family: 'Roboto';
+  color: #181818;
+  font-size: 15px;
+}

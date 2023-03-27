@@ -1,0 +1,42 @@
+.header-bg {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  font-family: 'Roboto';
+  padding: 6px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.profile {
+  height: 30px;
+  width: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.headers-list {
+  width: 16%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0px;
+  padding-right: 10px;
+}
+
+.header-logo {
+  height: 30px;
+  width: 120px;
+  margin-left: 20px;
+}
