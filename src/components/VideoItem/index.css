@@ -1,0 +1,64 @@
+.link-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.video-list-item {
+  list-style-type: none;
+  width: 30%;
+  margin-bottom: 50px;
+  margin-left: 0px;
+}
+
+.video-item-title {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #212121;
+  font-weight: 400;
+  text-align: start;
+}
+
+.video-item-name-para {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #616e7c;
+  font-weight: 400;
+  margin: 0px;
+  text-align: start;
+}
+
+.video-item-name {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #616e7c;
+  font-weight: 400;
+}
+
+.video-item-name-list {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #616e7c;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.view-published-container {
+  display: flex;
+  align-items: center;
+}
+
+.video-img {
+  height: 150px;
+  width: 100%;
+}
+
+.video-thumbnail {
+  height: 40px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.thumbnail-list {
+  display: flex;
+  justify-content: flex-start;
+}

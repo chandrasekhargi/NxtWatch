@@ -1,11 +1,9 @@
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookie from 'js-cookie'
-import ViewOfHomePage from '../ViewOfHomePage'
 
 import {LoginForm, CheckboxBtn} from '../../styledComponent'
 
-import Header from '../Header'
 import './index.css'
 
 class Login extends Component {

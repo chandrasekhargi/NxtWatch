@@ -4,12 +4,17 @@
   font-size: 12px;
 }
 
+.item-link {
+  text-decoration: none;
+}
+
 .left-list-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
   padding: 15px;
+  min-width: 15%;
 }
 
 .home-txt {
@@ -17,6 +22,12 @@
   color: #181818;
   font-size: 15px;
   margin-left: 10px;
+}
+
+.types-of-list-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 li {
@@ -27,6 +38,10 @@ li {
   display: flex;
   align-items: center;
   margin-left: 0px;
+}
+
+.react-icon {
+  text-decoration: none;
 }
 
 .contact-logo-container {
