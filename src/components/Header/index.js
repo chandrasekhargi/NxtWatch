@@ -1,7 +1,12 @@
 import {withRouter} from 'react-router-dom'
+
+import Popup from 'reactjs-popup'
+
+import 'reactjs-popup/dist/index.css'
 import './index.css'
 import {FaMoon} from 'react-icons/fa'
 import Cookie from 'js-cookie'
+import {PopUpContainerWithSpace, LogOutBtn} from '../../styledComponent'
 
 const Header = props => {
   const {history} = props
@@ -28,9 +33,42 @@ const Header = props => {
           />
         </li>
         <li>
-          <button onClick={clickOnLogout} className="logout-btn" type="button">
-            Logout
-          </button>
+          <Popup
+            modal
+            trigger={
+              <button className="logout-btn" type="button">
+                Logout
+              </button>
+            }
+            className="popup-content"
+            position="bottom left"
+          >
+            {close => (
+              <>
+                <div>
+                  Are you sure,you want to logout?
+                  <PopUpContainerWithSpace>
+                    <LogOutBtn
+                      btnBorder="1px solid #000000"
+                      color="#000000"
+                      bgColor="transparent"
+                      onClick={() => close()}
+                    >
+                      Cancel
+                    </LogOutBtn>
+                    <LogOutBtn
+                      onClick={clickOnLogout}
+                      btnBorder="1px solid #ffffff"
+                      color="#ffffff"
+                      bgColor="#3b82f6"
+                    >
+                      Confirm
+                    </LogOutBtn>
+                  </PopUpContainerWithSpace>
+                </div>
+              </>
+            )}
+          </Popup>
         </li>
       </ul>
     </nav>

@@ -26,6 +26,7 @@ class VideoDetailsList extends Component {
   state = {
     apiStatus: 'INITIAL',
     videoDetailsData: [],
+    saveVideoItem: false,
   }
 
   componentDidMount = () => {
@@ -72,13 +73,24 @@ class VideoDetailsList extends Component {
     }
   }
 
+  addToWatchLater = id => {
+    const {saveVideoItem} = this.state
+    console.log(id)
+
+    this.setState({saveVideoItem: !saveVideoItem})
+  }
+
   showVideoDetailsSuccess = () => {
-    const {videoDetailsData} = this.state
+    const {videoDetailsData, saveVideoItem} = this.state
 
     return (
       <>
         <TrendingUnorderedColumnContainer>
-          <VideoDetailsItem videoDetails={videoDetailsData} />
+          <VideoDetailsItem
+            addToWatchLater={this.addToWatchLater}
+            saveVideoItem={saveVideoItem}
+            videoDetails={videoDetailsData}
+          />
         </TrendingUnorderedColumnContainer>
       </>
     )

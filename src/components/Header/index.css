@@ -7,6 +7,12 @@
   align-items: center;
 }
 
+.popup-content {
+  width: 20%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .logout-btn {
   background-color: transparent;
   border: 1px solid #3b82f6;

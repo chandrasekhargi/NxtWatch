@@ -33,7 +33,8 @@
 }
 
 .premium-success-view-container {
-  overflow-x: scroll;
+  overflow: auto;
+  height: 100vh;
 }
 
 .video-unordered-container {
